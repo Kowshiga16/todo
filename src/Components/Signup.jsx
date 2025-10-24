@@ -23,44 +23,62 @@ function Signup(props) {
 
   return (
     <>
-      <div className="bg-black min-h-screen flex justify-center items-center p-5 sm:p-10">
-        <div className="bg-[#EFEFEF] w-full max-w-md p-6 sm:p-10 border rounded-lg shadow-lg">
-          <h1 className="text-2xl sm:text-3xl font-medium text-center">Hey hii</h1>
-          <p className="text-center text-sm sm:text-base mt-1">Sign up here buddyy :)</p>
 
-          <div className="flex flex-col gap-3 my-4 items-center">
-            <input
-              onChange={Handleuser}
-              type="text"
-              className="w-full sm:w-64 md:w-72 border-black p-2 bg-transparent border rounded-md text-sm sm:text-base"
-              placeholder="username"
-            />
-            <input
-              onChange={Handlepass}
-              type="text"
-              className="w-full sm:w-64 md:w-72 border-black p-2 bg-transparent border rounded-md text-sm sm:text-base"
-              placeholder="password"
-            />
-            <input
-              type="text"
-              className="w-full sm:w-64 md:w-72 border-black p-2 bg-transparent border rounded-md text-sm sm:text-base"
-              placeholder="confirm password"
-            />
-            <button
-              onClick={adduser}
-              className="bg-[#d36216] w-28 sm:w-32 p-2 rounded-md text-white text-sm sm:text-base hover:bg-[#b85612] transition-all"
-            >
-              Sign up
-            </button>
-            <p className="text-center text-sm sm:text-base">
-              Already have an Account?{" "}
-              <Link to={"/"} className="underline text-[#d36216] hover:text-[#b85612]">
-                Login
-              </Link>
-            </p>
-          </div>
-        </div>
-      </div>
+      
+
+<div className="bg-black width-100% min-h-screen flex justify-center items-center p-4">
+  <div className="bg-[#EFEFEF] w-full max-w-xs p-6 rounded-xl shadow-lg">
+
+    {/* Heading */}
+    <h1 className="text-2xl font-bold text-center text-gray-900">
+      Hey hii
+    </h1>
+    <p className="text-center text-gray-700 text-sm mt-1">
+      Sign up here buddyy :)
+    </p>
+
+    {/* Form */}
+    <div className="flex flex-col gap-3 my-5">
+      <input
+        type="text"
+        placeholder="Username"
+        className="w-full border border-gray-400 p-2 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#d36216]"
+        onChange={Handleuser}
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        className="w-full border border-gray-400 p-2 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#d36216]"
+        onChange={Handlepass}
+      />
+      <input
+        type="password"
+        placeholder="Confirm Password"
+        className="w-full border border-gray-400 p-2 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#d36216]"
+      />
+      <button
+        onClick={adduser}
+        className="bg-[#d36216] w-full p-2 rounded-md text-white font-semibold text-sm hover:bg-[#b85612] active:scale-95 transition-all duration-200"
+      >
+        Sign Up
+      </button>
+    </div>
+
+    {/* Footer */}
+    <p className="text-center text-gray-700 text-xs">
+      Already have an account?{" "}
+      <Link to="/" className="text-[#d36216] underline">
+        Login
+      </Link>
+    </p>
+  </div>
+</div>
+
+
+
+
+         
+    
     </>
   )
 }

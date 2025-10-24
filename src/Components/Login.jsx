@@ -36,47 +36,62 @@ function Login(props) {
 
   return (
     <>
-      <div className="bg-black min-h-screen flex justify-center items-center p-5 sm:p-10">
-        <div className="bg-[#EFEFEF] w-full max-w-md p-6 sm:p-10 border rounded-lg shadow-lg">
-          <h1 className="text-2xl sm:text-3xl font-medium text-center">Hey hii</h1>
-          {ruser ? (
-            <p className="text-center text-sm sm:text-base mt-1">
-              I help you to manage your activities after you login :)
-            </p>
-          ) : (
-            <p className="text-red-400 text-center text-sm sm:text-base mt-1">please sign up</p>
-          )}
+<div className="bg-black min-h-screen flex justify-center items-center p-4 sm:p-6 md:p-8">
+  <div className="bg-[#EFEFEF] w-full max-w-xs sm:max-w-sm md:max-w-md p-6 sm:p-8 rounded-xl shadow-lg">
 
-          <div className="flex flex-col gap-3 my-4 items-center">
-              <input
-              type="text"
-              className="w-full sm:w-64 md:w-72 border-black p-2 bg-transparent border rounded-md text-sm sm:text-base"
-              placeholder="username"
-              onChange={Handleuser}
-            />
-            <input
-              type="text"
-              className="w-full sm:w-64 md:w-72 border-black p-2 bg-transparent border rounded-md text-sm sm:text-base"
-              placeholder="password"
-              onChange={Handlepass}
-            />
+    {/* Heading */}
+    <h1 className="text-2xl sm:text-3xl font-bold text-center text-gray-900">
+      Hey hii
+    </h1>
 
-            <button
-              onClick={checkuser}
-              className="bg-[#8272DA] w-28 sm:w-32 p-2 rounded-md text-white text-sm sm:text-base hover:bg-[#6f63d2] transition-all"
-            >
-              Login
-            </button>
+    {ruser ? (
+      <p className="text-center text-gray-700 text-sm sm:text-base mt-1">
+        I help you manage your activities after you login :)
+      </p>
+    ) : (
+      <p className="text-red-500 text-center text-sm sm:text-base mt-1">
+        Please sign up
+      </p>
+    )}
 
-            <p className="text-center text-sm sm:text-base">
-              Don't have an Account?{" "}
-              <Link to={"signup"} className="underline text-[#8272DA] hover:text-[#6f63d2]">
-                Signup
-              </Link>
-            </p>
-          </div>
-        </div>
-      </div>
+    {/* Form */}
+    <div className="flex flex-col gap-3 sm:gap-4 my-5">
+      <input
+        type="text"
+        placeholder="Username"
+        onChange={Handleuser}
+        className="w-full border border-gray-400 p-2 sm:p-3 rounded-md text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#8272DA]"
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        onChange={Handlepass}
+        className="w-full border border-gray-400 p-2 sm:p-3 rounded-md text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#8272DA]"
+      />
+      <button
+        onClick={checkuser}
+        className="bg-[#8272DA] w-full p-2 sm:p-3 rounded-md text-white font-semibold text-sm sm:text-base hover:bg-[#6f63d2] active:scale-95 transition-all duration-200"
+      >
+        Login
+      </button>
+    </div>
+
+    {/* Footer */}
+    <p className="text-center text-gray-700 text-xs sm:text-sm">
+      Don’t have an account?{" "}
+      <Link
+        to="/signup"
+        className="underline text-[#8272DA] hover:text-[#6f63d2] transition-colors"
+      >
+        Signup
+      </Link>
+    </p>
+  </div>
+</div>
+
+
+
+  
     </>
   )
 }
